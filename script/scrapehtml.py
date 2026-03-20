@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
+#https://medium.com/@logan.laszewski14/learning-web-scraping-by-tracking-pok%C3%A9mon-card-prices-30d97a8f5eeb
 #run this file to produce csv with card data
 
 sealed_product_keywords = [
