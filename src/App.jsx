@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Login from './pages/Login';
@@ -6,6 +7,11 @@ import Profile from './pages/Profile';
 import ListPage from './pages/List';
 import Search from './pages/Search';
 import Product from './pages/Product';
+
+function PrivateRoute({ children }) {
+  const { user } = useAuth();
+  return user ? children : <Navigate to="/login" />;
+}
 
 function App() {
   return (
@@ -15,10 +21,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/list" element={<ListPage />} />
           <Route path="/search" element={<Search />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
+          <Route path="/list" element={<PrivateRoute><ListPage /></PrivateRoute>} />
         </Routes>
       </div>
     </Router>
