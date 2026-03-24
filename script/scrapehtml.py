@@ -100,7 +100,7 @@ pokemon_cards_dataframe["Card_Set"] = pokemon_cards_dataframe["Card_Set"].str.re
     "pokemon-", "", regex=False
 )
 
-output_csv_file = "data/pokemon_card_price_data.csv"
+output_csv_file = "script/pokemon_card_price_data.csv"
 
 pokemon_cards_dataframe.to_csv(output_csv_file, index=False)
 
