@@ -1,4 +1,4 @@
-{/* used Claude to help write and debug changes for image display */}
+{/* used Claude to help write and debug changes for image display and vault persistence */}
 
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
