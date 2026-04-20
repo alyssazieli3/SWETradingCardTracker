@@ -1,0 +1,232 @@
+:root {
+  --bg-base: #ffffff;
+  --bg-surface: #ffffff;
+  
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-muted: #666666;
+  
+  --accent-1: #000000;
+  --accent-2: #000000;
+  
+  --border-color: #000000;
+  --danger: #000000;
+  --success: #000000;
+  
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-sans);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  padding-right: calc(100vw - 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Base Components */
+.glass {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.glass-interactive {
+  transition: transform 0.1s;
+}
+
+.glass-interactive:hover {
+  transform: translateY(-2px);
+}
+
+.text-accent {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 9999px; /* Rounded buttons */
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  color: #000;
+  border: 2px solid #000;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.btn:hover {
+  background: #f0f0f0;
+}
+
+.btn-primary {
+  background: #000;
+  border-color: #000;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #333;
+}
+
+.btn-icon {
+  padding: 8px;
+  border-radius: 9999px;
+}
+
+/* Forms */
+.input-field {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--accent-1);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--accent-1);
+  border-color: var(--accent-1);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 12px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Navbar */
+.navbar {
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  position: relative;
+  top: 0;
+  z-index: 50;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 6px;
+  padding: 0 16px;
+  flex: 0 1 400px;
+  border: 1px solid var(--border-color);
+}
+
+.search-bar:focus-within {
+  border-color: var(--accent-1);
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  padding: 12px;
+  width: 100%;
+  outline: none;
+}
+
+/* Layout */
+.grid-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.grid-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Utilities */
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Animations */
+.animate-fade-in {
+  /* Simplified to prevent goofy movement */
+}
+
+.animate-float {
+  /* Removed float */
+}
+
+.hover-glow:hover {
+  /* Disabled */
+}
+
+.mb-4 { margin-bottom: 16px; }
+.mb-6 { margin-bottom: 24px; }
+.mb-8 { margin-bottom: 32px; }
+.mt-6 { margin-top: 24px; }
+.mt-8 { margin-top: 32px; }
+.p-6 { padding: 24px; }
